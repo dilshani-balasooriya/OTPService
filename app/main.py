@@ -212,7 +212,7 @@ def api_send_email_otp(
     decoded_key: DecodedKey = Depends(decode_key),
 ):
     return send_email_otp(
-        decoded_key.user, decoded_key.tenent, body.email, body.client_secret
+        decoded_key.user, decoded_key.tenent, body.email
     ).resp(response)
 
 

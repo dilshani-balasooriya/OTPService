@@ -44,6 +44,7 @@ class Tenents:
         return None
 
     def list(self) -> list[Tenent] | None:
+        print(self.user)
         self.db.exec("SELECT * FROM tenents WHERE user_id = %s", (self.user.id,))
         result = self.db.fetchall()
         if result:
